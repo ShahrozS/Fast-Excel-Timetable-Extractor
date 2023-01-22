@@ -9,10 +9,6 @@ sheets = wb.sheetnames
 wsMonday = wb[sheets[17]]
 
 # rows = wsf.iter_rows(min_row = 3,max_row = 51 , min_col =2 ,max_col =10)
-
-
-
-
 def check(val):
     a = "BSE-4A" #this can be change to whatever class OR it can be taken as an argument from user.
     if a in val:    
@@ -21,72 +17,92 @@ def check(val):
         return False;   
 
 
+def PrintByDay(day,SheetNum):
+    print(day)
+    print()
+    print("Time ","     ","    Class","             ","Sub")
+    wsDay = wb[sheets[SheetNum]]
+    for col in range(2,11):
+        for row in range(5,51):
+            char = get_column_letter(col)
 
-a = "BSE-4A"
-print("MONDAY")
-print()
+            if wsDay[char+str(row)].value!= None and check(wsDay[char+str(row)].value):
+                print(wsDay[char+'3'].value  , "      ",wsDay["A"+str(row)].value.strip(),"     ", wsDay[char+str(row)].value ,"       ", end= " ")
+                print()                 
 
 
-print("Time ","     ","    Class","             ","Sub")
 
-for row in range(5,51):
-    for col in range(2,10):
-        char = get_column_letter(col)
+#Monday
+PrintByDay("MONDAY",17)
+PrintByDay("WEDNESDAY",19)
+PrintByDay("THURSDAY",20)
+PrintByDay("FRIDAY",21)
+
+
+# print("MONDAY")
+# print()
+
+
+# print("Time ","     ","    Class","             ","Sub")
+
+# for row in range(5,51):
+#     for col in range(2,10):
+#         char = get_column_letter(col)
         
-        if wsMonday[char+str(row)].value != None and check(wsMonday[char+str(row)].value):
-            print(wsMonday[char+'3'].value  , "      ",wsMonday["A"+str(row)].value.strip(),"     ", wsMonday[char+str(row)].value ,"       ", end= " ")
-            print() 
+#         if wsMonday[char+str(row)].value != None and check(wsMonday[char+str(row)].value):
+#             print(wsMonday[char+'3'].value  , "      ",wsMonday["A"+str(row)].value.strip(),"     ", wsMonday[char+str(row)].value ,"       ", end= " ")
+#             print() 
     
-print()
-print("WEDNESDAY")
-print()
+# print()
+# print("WEDNESDAY")
+# print()
 
-wsWednesday = wb[sheets[19]]
+# wsWednesday = wb[sheets[19]]
 
 
-print("Time ","     ","    Class","             ","Sub")
+# print("Time ","     ","    Class","             ","Sub")
 
-for row in range(5,51):
-    for col in range(2,10):
-        char = get_column_letter(col)
+# for row in range(5,51):
+#     for col in range(2,10):
+#         char = get_column_letter(col)
         
-        if wsWednesday[char+str(row)].value != None and check(wsWednesday[char+str(row)].value):
-            print(wsWednesday[char+'3'].value  , "      ",wsWednesday["A"+str(row)].value.strip(),"     ", wsWednesday[char+str(row)].value ,"       ", end= " ")
-            print() 
+#         if wsWednesday[char+str(row)].value != None and check(wsWednesday[char+str(row)].value):
+#             print(wsWednesday[char+'3'].value  , "      ",wsWednesday["A"+str(row)].value.strip(),"     ", wsWednesday[char+str(row)].value ,"       ", end= " ")
+#             print() 
     
     
    
-print()
-print("THURSDAY")
-print()
-wsThursday= wb[sheets[20]]
+# print()
+# print("THURSDAY")
+# print()
+# wsThursday= wb[sheets[20]]
 
-print("Time ","     ","    Class","             ","Sub")
+# print("Time ","     ","    Class","             ","Sub")
 
-for row in range(5,51):
-    for col in range(2,10):
-        char = get_column_letter(col)
+# for row in range(5,51):
+#     for col in range(2,10):
+#         char = get_column_letter(col)
         
-        if wsThursday[char+str(row)].value != None and check(wsThursday[char+str(row)].value):
-            print(wsThursday[char+'3'].value  , "      ",wsThursday["A"+str(row)].value.strip(),"     ", wsThursday[char+str(row)].value ,"       ", end= " ")
-            print() 
+#         if wsThursday[char+str(row)].value != None and check(wsThursday[char+str(row)].value):
+#             print(wsThursday[char+'3'].value  , "      ",wsThursday["A"+str(row)].value.strip(),"     ", wsThursday[char+str(row)].value ,"       ", end= " ")
+#             print() 
     
 
-print()
-print("FRIDAY")
-print()
+# print()
+# print("FRIDAY")
+# print()
 
-wsFriday = wb[sheets[21]]
+# wsFriday = wb[sheets[21]]
 
-print("Time ","     ","    Class","             ","Sub")
+# print("Time ","     ","    Class","             ","Sub")
 
-for row in range(5,51):
-    for col in range(2,11):
-        char = get_column_letter(col)
+# for row in range(5,51):
+#     for col in range(2,11):
+#         char = get_column_letter(col)
         
-        if wsFriday[char+str(row)].value != None and check(wsFriday[char+str(row)].value):
-            print(wsFriday[char+'3'].value  , "      ",wsFriday["A"+str(row)].value.strip(),"     ", wsFriday[char+str(row)].value ,"       ", end= " ")
-            print() 
+#         if wsFriday[char+str(row)].value != None and check(wsFriday[char+str(row)].value):
+#             print(wsFriday[char+'3'].value  , "      ",wsFriday["A"+str(row)].value.strip(),"     ", wsFriday[char+str(row)].value ,"       ", end= " ")
+#             print() 
     
   
     
